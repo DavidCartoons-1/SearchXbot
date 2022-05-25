@@ -7,6 +7,8 @@ RUN chmod 777 /usr/src/app
 RUN apt-get -qq update && \
     apt-get -qq install -y unzip
 
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
